@@ -35,6 +35,20 @@ uint16_t header_size;
 
 int main()
 {
+    ifstream rar_file("Example.rar", ios::binary);
+    if (!rar_file.is_open())
+    {
+        cout << "Not open file" << endl;
+            return 1;
+    }
+
+    rar_file.seekg(0, ios::end);
+    int fileSize = rar_file.tellg();
+    cout << "File size: " << fileSize << " bytes" << endl;
+    rar_file.seekg(0, ios::beg);
+    vector<char> rar_data(fileSize, 0);
+    rar_file.read(rar_data.data(), fileSize);
+
 
 
 return 0;
