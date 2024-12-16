@@ -21,6 +21,14 @@ uint16_t NameSize;
 uint32_t FileAttr;
 };
 
+struct header_format
+{
+uint16_t header_crc;
+uint8_t header_type;
+uint16_t header_flags;
+uint16_t header_size;
+};
+
 
 #pragma pack(pop)
 
